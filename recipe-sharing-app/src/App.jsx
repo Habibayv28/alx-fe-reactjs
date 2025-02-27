@@ -6,22 +6,17 @@ import './App.css'
 import RecipetDetails from './components/RecipeDetails'
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  
   return (
     <Router>
       <div>
         <h1>Recipe</h1>
+        <AddRecipeForm />
+        <RecipeDetails/>
+        <Routes>
+        <Route path='/' element={<RecipeList />} />
+        </Routes>
       </div>
-       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-       
-      </div>
-      <RecipeList/>
-      <AddRecipeForm />
-      <RecipeDetails/>
     </Router>
   )
 }
