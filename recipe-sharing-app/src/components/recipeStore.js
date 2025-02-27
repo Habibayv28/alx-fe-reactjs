@@ -2,7 +2,7 @@ import create from 'zustand'
 
 const useRecipeStore = create(set => ({
   recipes: [],
-  
+  searchTerm: '',
   // Actions
   addRecipe: (newRecipe) =>
     set((state) => ({
@@ -35,4 +35,13 @@ const useRecipeStore = create(set => ({
         ),
       };
     }),
+    setSearchTerm: (term) =>
+        set((state) => ({
+          searchTerm: term,
+          filteredRecipes: state.recipes.filter((recipe) =>
+            recipe.title.toLowerCase().includes(term.toLowerCase())
+          ),
+        })),         
+
 }));
+export default useRecipeStore;
