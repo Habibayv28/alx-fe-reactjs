@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css'
 import Header from './components/Header';
 import Footer from './components/Footer';
-import Search from './components/search';
+import Search from './components/Search.jsx';
 const App = () => {
   return (
     <div className="flex flex-col min-h-screen pt-10">
